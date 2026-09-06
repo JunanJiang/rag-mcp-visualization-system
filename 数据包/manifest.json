@@ -1,0 +1,33 @@
+{
+    "app": {
+        "name": "SimuVision-Desktop",
+        "version": "1.0.0"
+    },
+    "createdAt": "2026-01-19T11:22:14",
+    "dataset": {
+        "blockCount": "11",
+        "datasetName": "plot3d",
+        "datasetType": "Plot3DMultiBlock",
+        "totalCells": 922816,
+        "totalPoints": 1002672
+    },
+    "exports": {
+        "datasets": "datasets.json",
+        "hierarchy": "hierarchy.json",
+        "images": [
+            "images/geometry/overview.png",
+            "images/mesh/overview.png"
+        ],
+        "variables": "variables.json",
+        "viewPresets": "views/view_presets.json"
+    },
+    "sessionId": "session_20260119_112214_plot3d",
+    "sourceFiles": {
+        "gridFile": "C:/Users/Lenovo/Desktop/testdata/plot3d.g"
+    },
+    "vtk": {
+        "major": 9,
+        "minor": 1,
+        "patch": 0
+    }
+}

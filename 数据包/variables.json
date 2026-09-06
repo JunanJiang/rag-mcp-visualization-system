@@ -1,0 +1,54 @@
+{
+    "variables": [
+        {
+            "components": 1,
+            "location": "PointData",
+            "name": "F1V1",
+			"guess_variableName":"density",
+            "rangeGlobal": {
+                "max": 3.00740404545009,
+                "min": 0.1280742733028112
+            }
+        },
+        {
+            "components": 1,
+            "location": "PointData",
+            "name": "F1V2",
+			"guess_variableName":"MomentumX",
+            "rangeGlobal": {
+                "max": 869.0369411942319,
+                "min": -314.4600875140113
+            }
+        },
+        {
+            "components": 1,
+            "location": "PointData",
+            "name": "F1V3",
+			"guess_variableName":"MomentumY",
+            "rangeGlobal": {
+                "max": 1014.4078512878491,
+                "min": -304.67287368855074
+            }
+        },
+        {
+            "components": 1,
+            "location": "PointData",
+            "name": "F1V4",
+			"guess_variableName":"MomentumZ",
+            "rangeGlobal": {
+                "max": 440.74340214264566,
+                "min": -267.4242938144704
+            }
+        },
+        {
+            "components": 1,
+            "location": "PointData",
+            "name": "F1V5",
+			"guess_variableName":"EnergyStagnationDensity",
+            "rangeGlobal": {
+                "max": 1025865.643924854,
+                "min": 16267.536738070005
+            }
+        }
+    ]
+}

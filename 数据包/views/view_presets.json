@@ -1,0 +1,10 @@
+{
+    "note": "Camera parameters will be captured during screenshot phase",
+    "presets": [
+        {
+            "description": "Isometric view",
+            "isDefault": true,
+            "name": "iso"
+        }
+    ]
+}

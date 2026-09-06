@@ -1,0 +1,15 @@
+{
+    "input_object": "plot3d_3DMerged",
+    "operation_id": "contourLine_20260119_112240",
+    "operation_type": "contourLine",
+    "parameters": {
+        "max_value": 3.00740404545009,
+        "min_value": 0.1280742733028112,
+        "num_contourLines": 45,
+        "variable_name": "F1V1"
+    },
+    "rendering_context": {
+        "camera_view": "ISO",
+        "resolution": "default"
+    }
+}

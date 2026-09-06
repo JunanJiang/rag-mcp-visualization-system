@@ -1,0 +1,10 @@
+{
+    "duration_seconds": 2.875,
+    "image_files": [
+        "./export/session_20260119_112214_plot3d/automation/ops/isosurface_isosurface_20260119_112250/images/isosurface_F1V2.png"
+    ],
+    "operation_id": "isosurface_20260119_112250",
+    "operation_type": "isosurface",
+    "output_directory": "./export/session_20260119_112214_plot3d/automation/ops/isosurface_isosurface_20260119_112250",
+    "success": true
+}

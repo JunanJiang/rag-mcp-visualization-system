@@ -1,0 +1,102 @@
+{
+  "id": "comparison_report",
+  "name": "方案对比报告",
+  "description": "适用于多方案仿真结果对比分析，侧重方案差异和优劣评估",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "1",
+      "title": "对比分析目的",
+      "slots": [
+        {
+          "slot_id": "comparison_purpose",
+          "placeholder": "[---对比分析目的---]",
+          "type": "text",
+          "deps_policy": ["purpose", "domain", "phenomena"],
+          "deps_facts": ["manifest", "variables"]
+        }
+      ]
+    },
+    {
+      "section_id": "2",
+      "title": "方案概述",
+      "slots": [
+        {
+          "slot_id": "scheme_overview",
+          "placeholder": "[---方案概述---]",
+          "type": "text",
+          "deps_policy": ["domain"],
+          "deps_facts": ["manifest", "blocks"]
+        }
+      ]
+    },
+    {
+      "section_id": "3",
+      "title": "网格与计算配置对比",
+      "slots": [
+        {
+          "slot_id": "mesh_comparison",
+          "placeholder": "[---网格配置对比---]",
+          "type": "text",
+          "deps_policy": ["domain"],
+          "deps_facts": ["manifest", "blocks"]
+        }
+      ]
+    },
+    {
+      "section_id": "4",
+      "title": "评定指标",
+      "slots": [
+        {
+          "slot_id": "comparison_metrics",
+          "placeholder": "[---对比评定指标---]",
+          "type": "text",
+          "deps_policy": ["domain", "purpose", "inference_level"],
+          "deps_facts": ["variables"]
+        }
+      ]
+    }
+  ],
+  "dynamic_sections": [
+    {
+      "section_id": "5",
+      "title": "变量对比分析",
+      "repeat_for": "variables",
+      "slot_template": {
+        "slot_id": "variable_{name}",
+        "placeholder": "[---变量{name}对比分析---]",
+        "type": "text",
+        "deps_policy": ["domain", "terminology", "inference_level"],
+        "deps_facts": ["variables"]
+      }
+    }
+  ],
+  "static_tail_sections": [
+    {
+      "section_id": "6",
+      "title": "方案优劣评估",
+      "slots": [
+        {
+          "slot_id": "scheme_evaluation",
+          "placeholder": "[---方案优劣评估---]",
+          "type": "text",
+          "deps_policy": ["purpose", "inference_level"],
+          "deps_facts": ["manifest", "variables"]
+        }
+      ]
+    },
+    {
+      "section_id": "7",
+      "title": "结论与建议",
+      "slots": [
+        {
+          "slot_id": "conclusion",
+          "placeholder": "[---结论与建议---]",
+          "type": "text",
+          "deps_policy": ["purpose", "inference_level", "missing_info_policy"],
+          "deps_facts": ["manifest", "variables", "automation_ops"]
+        }
+      ]
+    }
+  ]
+}

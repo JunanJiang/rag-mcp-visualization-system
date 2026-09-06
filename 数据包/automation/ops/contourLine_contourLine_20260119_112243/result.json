@@ -1,0 +1,10 @@
+{
+    "duration_seconds": 1.327,
+    "image_files": [
+        "./export/session_20260119_112214_plot3d/automation/ops/contourLine_contourLine_20260119_112243/images/contour_F1V4.png"
+    ],
+    "operation_id": "contourLine_20260119_112243",
+    "operation_type": "contourLine",
+    "output_directory": "./export/session_20260119_112214_plot3d/automation/ops/contourLine_contourLine_20260119_112243",
+    "success": true
+}

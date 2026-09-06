@@ -1,0 +1,16 @@
+{
+    "input_object": "plot3d_3DMerged",
+    "operation_id": "streamline_20260119_112304",
+    "operation_type": "streamline",
+    "parameters": {
+        "auto_detect_inlet": true,
+        "init_step": 0.2,
+        "max_length": 8000,
+        "num_seeds": 40000,
+        "vector_name": "VelocityVector"
+    },
+    "rendering_context": {
+        "camera_view": "ISO",
+        "resolution": "default"
+    }
+}

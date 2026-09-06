@@ -1,0 +1,189 @@
+/* ============================================================
+   Design Tokens — 简约工具感（Notion / Linear 风格）
+   8px 基线间距系统
+   ============================================================ */
+:root {
+  /* ── 色彩 ── */
+  --c-primary:       #2563eb;
+  --c-primary-hover: #1d4ed8;
+  --c-primary-light: #eff6ff;
+  --c-primary-muted: #dbeafe;
+  --c-success:       #16a34a;
+  --c-success-light: #f0fdf4;
+  --c-warning:       #d97706;
+  --c-warning-light: #fffbeb;
+  --c-danger:        #dc2626;
+  --c-danger-light:  #fef2f2;
+
+  /* 灰阶 */
+  --c-gray-950: #0a0a0b;
+  --c-gray-900: #111827;
+  --c-gray-800: #1e293b;
+  --c-gray-700: #334155;
+  --c-gray-600: #475569;
+  --c-gray-500: #64748b;
+  --c-gray-400: #94a3b8;
+  --c-gray-300: #cbd5e1;
+  --c-gray-200: #e2e8f0;
+  --c-gray-100: #f1f5f9;
+  --c-gray-50:  #f8fafc;
+  --c-white:    #ffffff;
+
+  /* 语义色 */
+  --c-bg-page:    var(--c-gray-50);
+  --c-bg-card:    var(--c-white);
+  --c-bg-sunken:  var(--c-gray-100);
+  --c-border:     var(--c-gray-200);
+  --c-border-muted: #eef1f5;
+  --c-text-1:     var(--c-gray-900);  /* 标题 */
+  --c-text-2:     var(--c-gray-700);  /* 正文 */
+  --c-text-3:     var(--c-gray-500);  /* 辅助 */
+  --c-text-4:     var(--c-gray-400);  /* 占位 */
+
+  /* ── 字体 ── */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* 字号 / 行高 */
+  --text-xs:   11px;   --lh-xs:   16px;
+  --text-sm:   12.5px; --lh-sm:   18px;
+  --text-base: 13.5px; --lh-base: 20px;
+  --text-md:   14.5px; --lh-md:   22px;
+  --text-lg:   16px;   --lh-lg:   24px;
+  --text-xl:   18px;   --lh-xl:   26px;
+  --text-2xl:  22px;   --lh-2xl:  30px;
+
+  /* ── 圆角 ── */
+  --radius-sm:  4px;
+  --radius-md:  6px;
+  --radius-lg:  8px;
+  --radius-xl:  10px;
+  --radius-2xl: 12px;
+  --radius-full: 9999px;
+
+  /* ── 阴影 ── */
+  --shadow-xs:    0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:    0 4px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg:    0 8px 24px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  --shadow-focus: 0 0 0 2px rgba(37,99,235,0.12);
+
+  /* ── 间距（8px 基线）── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* ── 过渡 ── */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 0.12s;
+  --duration-normal: 0.2s;
+}
+
+/* ============================================================
+   Base Reset & Typography
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-base);
+  color: var(--c-text-2);
+  background: var(--c-bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Scrollbar — thin, unobtrusive
+   ============================================================ */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-gray-300); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--c-gray-400); }
+
+/* ============================================================
+   Element Plus Theme Overrides
+   ============================================================ */
+:root {
+  --el-color-primary: var(--c-primary);
+  --el-color-primary-light-3: #60a5fa;
+  --el-color-primary-light-5: #93c5fd;
+  --el-color-primary-light-7: #bfdbfe;
+  --el-color-primary-light-9: #eff6ff;
+  --el-color-primary-dark-2: var(--c-primary-hover);
+
+  --el-border-radius-base: var(--radius-md);
+  --el-border-color: var(--c-border);
+  --el-border-color-light: var(--c-border-muted);
+  --el-bg-color: var(--c-bg-card);
+  --el-fill-color-light: var(--c-gray-50);
+  --el-text-color-primary: var(--c-text-1);
+  --el-text-color-regular: var(--c-text-2);
+  --el-text-color-secondary: var(--c-text-3);
+  --el-text-color-placeholder: var(--c-text-4);
+  --el-font-size-base: var(--text-base);
+  --el-font-size-small: var(--text-sm);
+
+  --el-component-size: 32px;
+  --el-component-size-small: 28px;
+}
+
+/* Button refinements */
+.el-button {
+  font-weight: 500;
+  border-radius: var(--radius-md) !important;
+  transition: all var(--duration-fast) var(--ease-default);
+}
+.el-button--primary {
+  --el-button-bg-color: var(--c-primary);
+  --el-button-border-color: var(--c-primary);
+}
+.el-button--primary:hover {
+  --el-button-hover-bg-color: var(--c-primary-hover);
+  --el-button-hover-border-color: var(--c-primary-hover);
+}
+
+/* Input refinements */
+.el-input__wrapper, .el-textarea__inner {
+  border-radius: var(--radius-md) !important;
+  transition: box-shadow var(--duration-fast) var(--ease-default) !important;
+}
+
+/* Tag refinements */
+.el-tag {
+  border-radius: var(--radius-sm) !important;
+  font-weight: 500;
+}
+
+/* Switch refinements */
+.el-switch {
+  --el-switch-on-color: var(--c-primary);
+}
+
+/* Message box refinements */
+.el-message-box {
+  border-radius: var(--radius-xl) !important;
+  padding: var(--sp-6) !important;
+}
+
+/* Divider */
+.el-divider--horizontal {
+  border-top-color: var(--c-border-muted);
+  margin: var(--sp-5) 0;
+}
+.el-divider__text {
+  font-size: var(--text-sm);
+  color: var(--c-text-4);
+  background: var(--c-bg-card);
+}

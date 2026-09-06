@@ -1,0 +1,102 @@
+{
+  "id": "acceptance_report",
+  "name": "验收评估报告",
+  "description": "适用于仿真结果验收评估，侧重合规性检查和性能指标达标判断",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "1",
+      "title": "验收目的与范围",
+      "slots": [
+        {
+          "slot_id": "acceptance_scope",
+          "placeholder": "[---验收目的与范围---]",
+          "type": "text",
+          "deps_policy": ["purpose", "domain"],
+          "deps_facts": ["manifest", "variables"]
+        }
+      ]
+    },
+    {
+      "section_id": "2",
+      "title": "仿真配置摘要",
+      "slots": [
+        {
+          "slot_id": "sim_config_summary",
+          "placeholder": "[---仿真配置摘要---]",
+          "type": "text",
+          "deps_policy": ["domain"],
+          "deps_facts": ["manifest", "blocks"]
+        }
+      ]
+    },
+    {
+      "section_id": "3",
+      "title": "网格质量评估",
+      "slots": [
+        {
+          "slot_id": "mesh_quality_assessment",
+          "placeholder": "[---网格质量评估---]",
+          "type": "text",
+          "deps_policy": ["domain"],
+          "deps_facts": ["manifest", "blocks"]
+        }
+      ]
+    },
+    {
+      "section_id": "4",
+      "title": "验收指标与判据",
+      "slots": [
+        {
+          "slot_id": "acceptance_criteria",
+          "placeholder": "[---验收指标与判据---]",
+          "type": "text",
+          "deps_policy": ["domain", "purpose", "inference_level"],
+          "deps_facts": ["variables"]
+        }
+      ]
+    }
+  ],
+  "dynamic_sections": [
+    {
+      "section_id": "5",
+      "title": "关键变量达标分析",
+      "repeat_for": "variables",
+      "slot_template": {
+        "slot_id": "variable_{name}",
+        "placeholder": "[---变量{name}达标分析---]",
+        "type": "text",
+        "deps_policy": ["domain", "terminology", "inference_level"],
+        "deps_facts": ["variables"]
+      }
+    }
+  ],
+  "static_tail_sections": [
+    {
+      "section_id": "6",
+      "title": "验收结论",
+      "slots": [
+        {
+          "slot_id": "acceptance_conclusion",
+          "placeholder": "[---验收结论---]",
+          "type": "text",
+          "deps_policy": ["purpose", "inference_level"],
+          "deps_facts": ["manifest", "variables"]
+        }
+      ]
+    },
+    {
+      "section_id": "7",
+      "title": "遗留问题与建议",
+      "slots": [
+        {
+          "slot_id": "conclusion",
+          "placeholder": "[---遗留问题与建议---]",
+          "type": "text",
+          "deps_policy": ["purpose", "inference_level", "missing_info_policy"],
+          "deps_facts": ["manifest", "variables", "automation_ops"]
+        }
+      ]
+    }
+  ]
+}

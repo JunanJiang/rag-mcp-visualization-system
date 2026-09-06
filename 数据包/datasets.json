@@ -1,0 +1,411 @@
+{
+    "datasets": [
+        {
+            "blockIndex": 0,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    -0.00262300979971258,
+                    0.07921153722038032,
+                    -0.05289714477692415,
+                    0.05729425257117271,
+                    0.08924317691010186,
+                    0.25366423283631856
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0000",
+            "name": "Block_1",
+            "topology": {
+                "cells": 351095,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        216,
+                        24,
+                        72
+                    ]
+                },
+                "points": 373248
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 1,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    -0.08,
+                    0.008378109408616302,
+                    -0.0219354455202345,
+                    0.0668385691050729,
+                    0.06536737042737552,
+                    0.2549969549146324
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0001",
+            "name": "Block_2",
+            "topology": {
+                "cells": 86975,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        26,
+                        50,
+                        72
+                    ]
+                },
+                "points": 93600
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 2,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.0009094115358437395,
+                    0.07567892985701095,
+                    -0.07623971099128207,
+                    0.0045896672804409625,
+                    0.09237386951751723,
+                    0.2538607665110989
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0002",
+            "name": "Block_3",
+            "topology": {
+                "cells": 33299,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        68,
+                        8,
+                        72
+                    ]
+                },
+                "points": 39168
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 3,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.05979270870358606,
+                    0.08108913076410851,
+                    -0.07623971099128207,
+                    0.004326867850818308,
+                    0.12216205406171757,
+                    0.24736507272475153
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0003",
+            "name": "Block_4",
+            "topology": {
+                "cells": 16685,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        6,
+                        48,
+                        72
+                    ]
+                },
+                "points": 20736
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 4,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.007327765997594894,
+                    0.06160123359199307,
+                    -0.03980793741758369,
+                    0.04822588114309227,
+                    0.2435284874533784,
+                    0.25128596138992787
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0004",
+            "name": "Block_5",
+            "topology": {
+                "cells": 18920,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        216,
+                        9,
+                        12
+                    ]
+                },
+                "points": 23328
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 5,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.007450877575554627,
+                    0.06142684745183646,
+                    -0.03969422289968052,
+                    0.04806907387393458,
+                    0.24355658076442807,
+                    0.2512432910313568
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0005",
+            "name": "Block_6",
+            "topology": {
+                "cells": 5720,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        105,
+                        6,
+                        12
+                    ]
+                },
+                "points": 7560
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 6,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.007525231198877415,
+                    0.06148490170747331,
+                    -0.039615524737881325,
+                    0.048091355576229525,
+                    0.24356001286306914,
+                    0.2511611759266048
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0006",
+            "name": "Block_7",
+            "topology": {
+                "cells": 5280,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        97,
+                        6,
+                        12
+                    ]
+                },
+                "points": 6984
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 7,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.08029467400433232,
+                    0.1437797006481194,
+                    -0.021968722156540436,
+                    0.017482292635181,
+                    0.13056645765823388,
+                    0.24580377876601583
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0007",
+            "name": "Block_8",
+            "topology": {
+                "cells": 298839,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        184,
+                        24,
+                        72
+                    ]
+                },
+                "points": 317952
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 8,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.07182611187681594,
+                    0.09011667585827737,
+                    -0.031668302878488194,
+                    0.003413828848804385,
+                    0.1277042603823856,
+                    0.2462415806588095
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0008",
+            "name": "Block_9",
+            "topology": {
+                "cells": 30459,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        12,
+                        40,
+                        72
+                    ]
+                },
+                "points": 34560
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 9,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.08414756682472735,
+                    0.14137893165675874,
+                    -0.031668302878488194,
+                    4.5568987229860925e-05,
+                    0.13034938364151405,
+                    0.24495292312181222
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0009",
+            "name": "Block_10",
+            "topology": {
+                "cells": 32305,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        66,
+                        8,
+                        72
+                    ]
+                },
+                "points": 38016
+            },
+            "type": "vtkStructuredGrid"
+        },
+        {
+            "blockIndex": 10,
+            "bounds": {
+                "description": "Spatial bounding box of the dataset in world coordinates",
+                "format": "[xmin, xmax, ymin, ymax, zmin, zmax]",
+                "unit": "model_units",
+                "values": [
+                    0.13568608719339423,
+                    0.178,
+                    -0.01875138763879224,
+                    0.017328553142060762,
+                    0.14420537238046333,
+                    0.24471145884457873
+                ]
+            },
+            "dataArraysSummary": {
+                "cellDataArraysCount": 0,
+                "pointDataArraysCount": 5
+            },
+            "datasetId": "block_0010",
+            "name": "Block_11",
+            "topology": {
+                "cells": 43239,
+                "dims": {
+                    "description": "Grid dimensions (number of points in each direction)",
+                    "format": "[nx, ny, nz]",
+                    "unit": "count",
+                    "values": [
+                        22,
+                        30,
+                        72
+                    ]
+                },
+                "points": 47520
+            },
+            "type": "vtkStructuredGrid"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+# 智能仿真报告生成工具 - 依赖列表
+
+# 核心依赖
+python-docx>=0.8.11          # DOCX 文件处理
+PyYAML>=6.0                   # YAML 解析（知识卡片 front matter）
+openai>=1.0.0                 # DeepSeek API（OpenAI 兼容）
+flask>=2.0.0                  # Web 服务器
+flask-cors>=4.0.0             # CORS 支持
+
+# 向量数据库 + BM25 混合检索
+chromadb>=0.4.0               # 向量存储与检索
+rank-bm25>=0.2.2              # BM25 关键词检索（Hybrid Search）
+
+# 嵌入模型（可选，不安装则使用简单哈希方法）
+sentence-transformers>=2.2.0  # 多语言嵌入模型
+
+# 联网搜索
+requests>=2.28.0              # HTTP 请求（Tavily Search API）
+
+# 认证
+PyJWT>=2.8.0                  # JWT token 生成与验证
+
+# 测试
+pytest>=7.0.0                 # 测试框架
+
+# 可选依赖
+# pandoc                      # 如需使用 pandoc 方案生成 DOCX，需系统安装

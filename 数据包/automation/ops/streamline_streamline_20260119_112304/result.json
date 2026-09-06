@@ -1,0 +1,10 @@
+{
+    "duration_seconds": 60.46,
+    "image_files": [
+        "./export/session_20260119_112214_plot3d/automation/ops/streamline_streamline_20260119_112304/images/streamline_VelocityVector.png"
+    ],
+    "operation_id": "streamline_20260119_112304",
+    "operation_type": "streamline",
+    "output_directory": "./export/session_20260119_112214_plot3d/automation/ops/streamline_streamline_20260119_112304",
+    "success": true
+}

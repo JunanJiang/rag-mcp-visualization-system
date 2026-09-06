@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node.js
+node_modules/
+frontend/dist/
+frontend_host_demo/dist/
+
+# Generated outputs
+server/outputs/
+mcp_server/outputs/
+server/uploads/
+server/kb_uploads/
+/temp/
+/temp_docs/
+/image/
+
+# Generated performance-test artifacts and local JMeter runtime
+tests/jmeter/apache-jmeter-*/
+tests/jmeter/apache-jmeter-*.zip
+tests/jmeter/results/
+tests/jmeter/*.log
+
+# ChromaDB
+chroma_db/
+
+# Environment variables
+.env
+
+# SQLite 数据库（包含用户密码哈希，不应提交）
+server/*.db
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Windsurf
+.windsurfrules

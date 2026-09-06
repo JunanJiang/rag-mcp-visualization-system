@@ -1,0 +1,103 @@
+{
+  "id": "cfd_standard",
+  "name": "CFD 标准报告",
+  "description": "适用于通用 CFD 仿真结果分析，包含分析目的、几何/网格描述、评定准则、变量分析和结论",
+  "version": "1.0",
+  "sections": [
+    {
+      "section_id": "1",
+      "title": "分析目的",
+      "slots": [
+        {
+          "slot_id": "analysis_purpose_1",
+          "placeholder": "[---分析目的1---]",
+          "type": "text",
+          "deps_policy": ["purpose", "domain", "phenomena"],
+          "deps_facts": ["manifest", "variables"]
+        },
+        {
+          "slot_id": "analysis_purpose_2",
+          "placeholder": "[---分析目的2---]",
+          "type": "text",
+          "deps_policy": ["purpose", "focus"],
+          "deps_facts": ["manifest"]
+        }
+      ]
+    },
+    {
+      "section_id": "2",
+      "title": "几何结构描述",
+      "slots": [
+        {
+          "slot_id": "geometry_description",
+          "placeholder": "[---几何结构描述---]",
+          "type": "text",
+          "deps_policy": ["domain"],
+          "deps_facts": ["manifest", "blocks"]
+        }
+      ]
+    },
+    {
+      "section_id": "3",
+      "title": "网格结构描述",
+      "slots": [
+        {
+          "slot_id": "mesh_description",
+          "placeholder": "[---网格描述---]",
+          "type": "text",
+          "deps_policy": ["domain"],
+          "deps_facts": ["manifest", "blocks"]
+        }
+      ]
+    },
+    {
+      "section_id": "5",
+      "title": "评定准则",
+      "slots": [
+        {
+          "slot_id": "evaluation_criteria_1",
+          "placeholder": "[---评定准则1---]",
+          "type": "text",
+          "deps_policy": ["domain", "purpose", "inference_level"],
+          "deps_facts": ["variables"]
+        },
+        {
+          "slot_id": "evaluation_criteria_2",
+          "placeholder": "[---评定准则2---]",
+          "type": "text",
+          "deps_policy": ["domain", "missing_info_policy"],
+          "deps_facts": ["manifest"]
+        }
+      ]
+    }
+  ],
+  "dynamic_sections": [
+    {
+      "section_id": "6",
+      "title": "流场变量分析",
+      "repeat_for": "variables",
+      "slot_template": {
+        "slot_id": "variable_{name}",
+        "placeholder": "[---变量{name}说明---]",
+        "type": "text",
+        "deps_policy": ["domain", "terminology", "inference_level"],
+        "deps_facts": ["variables"]
+      }
+    }
+  ],
+  "static_tail_sections": [
+    {
+      "section_id": "7",
+      "title": "结论",
+      "slots": [
+        {
+          "slot_id": "conclusion",
+          "placeholder": "[---结论---]",
+          "type": "text",
+          "deps_policy": ["purpose", "inference_level", "missing_info_policy"],
+          "deps_facts": ["manifest", "variables", "automation_ops"]
+        }
+      ]
+    }
+  ]
+}

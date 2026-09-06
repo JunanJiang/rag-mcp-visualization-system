@@ -1,0 +1,88 @@
+{
+    "blockCount": "11",
+    "isMultiBlock": true,
+    "root": {
+        "children": [
+            {
+                "blockIndex": 0,
+                "name": "Block_1",
+                "nodeId": "block_0000",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 1,
+                "name": "Block_2",
+                "nodeId": "block_0001",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 2,
+                "name": "Block_3",
+                "nodeId": "block_0002",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 3,
+                "name": "Block_4",
+                "nodeId": "block_0003",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 4,
+                "name": "Block_5",
+                "nodeId": "block_0004",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 5,
+                "name": "Block_6",
+                "nodeId": "block_0005",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 6,
+                "name": "Block_7",
+                "nodeId": "block_0006",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 7,
+                "name": "Block_8",
+                "nodeId": "block_0007",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 8,
+                "name": "Block_9",
+                "nodeId": "block_0008",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 9,
+                "name": "Block_10",
+                "nodeId": "block_0009",
+                "nodeType": "block",
+                "parentId": "root"
+            },
+            {
+                "blockIndex": 10,
+                "name": "Block_11",
+                "nodeId": "block_0010",
+                "nodeType": "block",
+                "parentId": "root"
+            }
+        ],
+        "name": "plot3d",
+        "nodeId": "root",
+        "nodeType": "dataset_root"
+    }
+}
