@@ -1,6 +1,13 @@
 @echo off
-set ROOT=%~dp0
-set PYTHON=D:\anaconda\python.exe
+set "ROOT=%~dp0"
+where python >nul 2>&1
+if errorlevel 1 (
+    echo [ERROR] Python was not found in PATH.
+    echo Install Python 3.10+ and reopen this terminal.
+    pause
+    exit /b 1
+)
+set "PYTHON=python"
 
 echo.
 echo [1] Killing old processes...
@@ -13,7 +20,7 @@ for /f "tokens=2" %%i in ('wmic process where "name='python.exe' and commandline
 timeout /t 1 /nobreak >nul
 
 echo [2] Starting main backend  (port 5000)...
-start "Backend-5000" cmd /k "cd /d "%ROOT%" && %PYTHON% server\app_v2.py"
+start "Backend-5000" cmd /k "cd /d ""%ROOT%"" && %PYTHON% server\app_v2.py"
 timeout /t 1 /nobreak >nul
 
 echo [2.5] Waiting for main backend to be ready (max 60s)...
@@ -33,15 +40,15 @@ if errorlevel 1 (
 echo Main backend is ready.
 
 echo [3] Starting demo backend  (port 5100)...
-start "Backend-5100" cmd /k "cd /d "%ROOT%" && %PYTHON% integration_demo\backend\app.py"
+start "Backend-5100" cmd /k "cd /d ""%ROOT%"" && %PYTHON% integration_demo\backend\app.py"
 timeout /t 1 /nobreak >nul
 
 echo [4] Starting main frontend (port 3001)...
-start "Frontend-3001" cmd /k "cd /d "%ROOT%frontend" && npm run dev"
+start "Frontend-3001" cmd /k "cd /d ""%ROOT%frontend"" && npm run dev"
 timeout /t 1 /nobreak >nul
 
 echo [5] Starting demo frontend (port 3002)...
-start "Frontend-3002" cmd /k "cd /d "%ROOT%integration_demo\frontend" && npm run dev"
+start "Frontend-3002" cmd /k "cd /d ""%ROOT%integration_demo\frontend"" && npm run dev"
 
 echo.
 echo Waiting for frontends to warm up...

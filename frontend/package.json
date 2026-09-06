@@ -1,6 +1,7 @@
 {
   "name": "simuvision-report-generator",
   "version": "1.0.0",
+  "type": "module",
   "description": "智能仿真报告生成工具 - 前端界面",
   "private": true,
   "scripts": {

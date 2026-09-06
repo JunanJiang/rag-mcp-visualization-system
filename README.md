@@ -2,6 +2,26 @@
 
 SimuReport 面向仿真与工程数据分析场景，将数据包解析、知识检索、工具调用、报告编排和多格式导出整合为一套可交互工作流。用户可以上传标准化数据包，通过澄清问答补全生成条件，调用 RAG 与 MCP 工具生成带图表的结构化报告。
 
+> A full-stack AI application that combines hybrid retrieval, MCP tool orchestration, a human-in-the-loop report workflow, and multi-format export for engineering data.
+
+## 界面预览
+
+### 引导式报告配置
+
+![SimuReport 引导式报告工作流](docs/screenshots/report-workflow.png)
+
+### 分层知识库管理
+
+![SimuReport 分层知识库管理](docs/screenshots/knowledge-base.png)
+
+## 项目亮点
+
+- **端到端 AI 工作流**：从数据接入、条件澄清和检索增强，一直覆盖到章节审核与报告导出。
+- **可控生成**：以 Draft/Slot 状态模型管理报告章节，让用户可以逐段编辑、确认或重新生成。
+- **混合检索**：组合 ChromaDB 向量检索与 BM25 关键词检索，兼顾语义相关性和专业术语命中。
+- **可观测工具调用**：MCP 层统一管理工具发现、参数调用、执行日志和统计，便于调试与扩展。
+- **工程化边界**：包含身份认证、角色权限、组织隔离、异步任务、输入校验和密钥脱敏。
+
 ## 核心能力
 
 - **多源数据接入**：支持本地目录、ZIP 数据包和标准 Schema JSON，并提供结构校验与元数据提取。
@@ -70,6 +90,7 @@ pip install -r requirements.txt
 PowerShell：
 
 ```powershell
+$env:SIMUREPORT_DEMO_ADMIN_PASSWORD = "choose-a-local-password"
 $env:DEEPSEEK_API_KEY = "your_deepseek_key"
 $env:TAVILY_API_KEY = "your_tavily_key"   # 可选
 $env:JWT_SECRET = "replace_with_a_random_secret"
@@ -78,10 +99,13 @@ $env:JWT_SECRET = "replace_with_a_random_secret"
 Bash：
 
 ```bash
+export SIMUREPORT_DEMO_ADMIN_PASSWORD="choose-a-local-password"
 export DEEPSEEK_API_KEY="your_deepseek_key"
 export TAVILY_API_KEY="your_tavily_key"   # 可选
 export JWT_SECRET="replace_with_a_random_secret"
 ```
+
+`SIMUREPORT_DEMO_ADMIN_PASSWORD` 仅用于本地演示。设置后，系统会创建用户名为 `demo_admin` 的管理员；未设置时不会自动创建任何默认账号。
 
 ### 3. 启动后端
 
@@ -123,13 +147,19 @@ npm run dev
 
 ## 测试
 
-仓库保留了可复现的 JMeter 测试计划。请单独安装 Apache JMeter 后运行：
+核心报告模块包含 10 个自动化测试：
+
+```bash
+python -m pytest reportgen/tests -q
+```
+
+仓库还保留了可复现的 JMeter 接口测试计划。请单独安装 Apache JMeter 后运行：
 
 ```bash
 jmeter -n -t tests/jmeter/SimuReport_TestPlan.jmx -l tests/jmeter/results/result.csv
 ```
 
-测试计划覆盖健康检查、认证、数据校验、知识库、组织、MCP、异步任务和管理员接口。
+JMeter 测试计划覆盖健康检查、认证、数据校验、知识库、组织、MCP、异步任务和管理员接口。
 
 ## 配置与安全
 

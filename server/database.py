@@ -290,15 +290,17 @@ def _migrate_db(conn: sqlite3.Connection):
     conn.commit()
 
 
-def seed_test_accounts():
-    """种入默认测试账号（幂等：已存在则跳过）
-    
-    admin      密码: admin123456   角色: admin
-    """
+def seed_test_accounts() -> str | None:
+    """按需创建本地演示管理员，未配置密码时不创建任何账号。"""
+    username = os.environ.get('SIMUREPORT_DEMO_ADMIN_USERNAME', 'demo_admin').strip()
+    password = os.environ.get('SIMUREPORT_DEMO_ADMIN_PASSWORD', '')
+    if not password:
+        return None
+    if len(password) < 8:
+        raise ValueError('SIMUREPORT_DEMO_ADMIN_PASSWORD 至少需要 8 个字符')
+
     _accounts = [
-        ('admin',     'admin123456', '管理员',    'admin'),
-        ('zhangwei',  'Simu@2024',   '张威',      'user'),
-        ('liuming',   'Simu@2024',   '刘明',      'user'),
+        (username, password, 'Demo Admin', 'admin'),
     ]
     with get_db() as conn:
         for username, password, display_name, role in _accounts:
@@ -314,6 +316,7 @@ def seed_test_accounts():
                 print(f"[seed] 已创建账号: {username}  角色: {role}")
             else:
                 pass  # 已存在，跳过
+    return username
 
 
 # ── 用户 AI 配置 ──

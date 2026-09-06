@@ -7,8 +7,9 @@
 #    [4] Demo 前端      http://localhost:3002
 # ============================================================
 
-$ROOT = Split-Path -Parent $MyInvocation.MyCommand.Path
-$PYTHON = "D:\anaconda\python.exe"
+$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$pythonCommand = Get-Command python -ErrorAction Stop
+$pythonExe = $pythonCommand.Source
 
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor Cyan
@@ -42,7 +43,7 @@ Write-Host "[2/4] 启动主项目后端  (http://127.0.0.1:5000)..." -Foreground
 Start-Process -FilePath "powershell.exe" -ArgumentList @(
     "-NoExit",
     "-Command",
-    "cd '$ROOT'; Write-Host '[ 主项目后端 ]' -ForegroundColor Cyan; & '$PYTHON' server\app_v2.py"
+    "cd '$projectRoot'; Write-Host '[ 主项目后端 ]' -ForegroundColor Cyan; & '$pythonExe' server\app_v2.py"
 ) -WindowStyle Normal
 
 Start-Sleep -Milliseconds 800
@@ -52,7 +53,7 @@ Write-Host "[3/4] 启动 Demo 后端  (http://127.0.0.1:5100)..." -ForegroundCol
 Start-Process -FilePath "powershell.exe" -ArgumentList @(
     "-NoExit",
     "-Command",
-    "cd '$ROOT'; Write-Host '[ Demo 后端 ]' -ForegroundColor Magenta; & '$PYTHON' integration_demo\backend\app.py"
+    "cd '$projectRoot'; Write-Host '[ Demo 后端 ]' -ForegroundColor Magenta; & '$pythonExe' integration_demo\backend\app.py"
 ) -WindowStyle Normal
 
 Start-Sleep -Milliseconds 800
@@ -62,7 +63,7 @@ Write-Host "[4/4] 启动主项目前端  (http://localhost:3001)..." -Foreground
 Start-Process -FilePath "powershell.exe" -ArgumentList @(
     "-NoExit",
     "-Command",
-    "cd '$ROOT\frontend'; Write-Host '[ 主项目前端 ]' -ForegroundColor Green; npm run dev"
+    "cd '$projectRoot\frontend'; Write-Host '[ 主项目前端 ]' -ForegroundColor Green; npm run dev"
 ) -WindowStyle Normal
 
 Start-Sleep -Milliseconds 800
@@ -72,7 +73,7 @@ Write-Host "[5/4] 启动 Demo 前端  (http://localhost:3002)..." -ForegroundCol
 Start-Process -FilePath "powershell.exe" -ArgumentList @(
     "-NoExit",
     "-Command",
-    "cd '$ROOT\integration_demo\frontend'; Write-Host '[ Demo 前端 ]' -ForegroundColor Magenta; npm run dev"
+    "cd '$projectRoot\integration_demo\frontend'; Write-Host '[ Demo 前端 ]' -ForegroundColor Magenta; npm run dev"
 ) -WindowStyle Normal
 
 # ── 等待后端就绪后打开浏览器 ────────────────────────────────

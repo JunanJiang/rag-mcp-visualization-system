@@ -4087,10 +4087,13 @@ if __name__ == '__main__':
     init_db()
     print("数据库已初始化 (SQLite)")
 
-    # 种入默认测试账号（幂等）
-    seed_test_accounts()
-    print("默认账号: admin/admin123456 (管理员)")
-    _seed_demo_organizations()
+    # 仅在显式提供本地演示密码时创建管理员，避免默认弱口令。
+    demo_admin = seed_test_accounts()
+    if demo_admin:
+        print(f"本地演示管理员已就绪: {demo_admin}")
+        _seed_demo_organizations()
+    else:
+        print("未创建演示管理员；如需本地演示，请设置 SIMUREPORT_DEMO_ADMIN_PASSWORD")
 
     # 管理员统一维护 AI Key：若系统级配置表为空，则播种一条默认 DeepSeek 配置
     if seed_default_system_ai_config(DEEPSEEK_API_KEY):

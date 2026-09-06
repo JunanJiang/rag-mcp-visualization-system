@@ -50,9 +50,9 @@
 
 ### 2. 启动后端服务
 
-```bash
-cd server
-python app_v2.py
+```powershell
+$env:SIMUREPORT_DEMO_ADMIN_PASSWORD = "choose-a-local-password"
+python server/app_v2.py
 ```
 
 确保服务运行在 `http://localhost:5000`。
@@ -72,7 +72,7 @@ python app_v2.py
 
 ```bash
 # 非GUI模式运行，生成CSV结果和HTML报告
-jmeter -n -t SimuReport_TestPlan.jmx -l results/result.csv -e -o results/html_report
+jmeter -n -t SimuReport_TestPlan.jmx -JADMIN_PASSWORD=choose-a-local-password -l results/result.csv -e -o results/html_report
 ```
 
 ### 方式三：GUI模式（可视化观察）

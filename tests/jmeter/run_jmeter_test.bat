@@ -20,6 +20,13 @@ if %errorlevel% neq 0 (
 )
 
 :: 设置变量
+if "%SIMUREPORT_DEMO_ADMIN_PASSWORD%"=="" (
+    echo [错误] 请先设置 SIMUREPORT_DEMO_ADMIN_PASSWORD，并使用相同密码启动后端。
+    echo 例如: set SIMUREPORT_DEMO_ADMIN_PASSWORD=choose-a-local-password
+    pause
+    exit /b 1
+)
+
 set SCRIPT_DIR=%~dp0
 set JMX_FILE=%SCRIPT_DIR%SimuReport_TestPlan.jmx
 set RESULT_DIR=%SCRIPT_DIR%results
@@ -43,7 +50,7 @@ echo.
 echo ▶ 正在执行 JMeter 测试 (非GUI模式)...
 echo.
 
-jmeter -n -t "%JMX_FILE%" -l "%RESULT_CSV%" -e -o "%REPORT_DIR%" -Jjmeter.save.saveservice.output_format=csv
+jmeter -n -t "%JMX_FILE%" -JADMIN_PASSWORD="%SIMUREPORT_DEMO_ADMIN_PASSWORD%" -l "%RESULT_CSV%" -e -o "%REPORT_DIR%" -Jjmeter.save.saveservice.output_format=csv
 
 echo.
 if %errorlevel% equ 0 (
