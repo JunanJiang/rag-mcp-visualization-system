@@ -1,77 +1,76 @@
-# SimuReport：RAG + MCP 智能可视化报告系统
+# SimuReport: RAG + MCP Intelligent Report Generation System
 
-SimuReport 面向仿真与工程数据分析场景，将数据包解析、知识检索、工具调用、报告编排和多格式导出整合为一套可交互工作流。用户可以上传标准化数据包，通过澄清问答补全生成条件，调用 RAG 与 MCP 工具生成带图表的结构化报告。
+[中文说明](README_CN.md)
 
-> A full-stack AI application that combines hybrid retrieval, MCP tool orchestration, a human-in-the-loop report workflow, and multi-format export for engineering data.
+SimuReport is a full-stack AI application for engineering and simulation data analysis. It combines structured data ingestion, hybrid RAG retrieval, MCP tool orchestration, a human-in-the-loop report workflow, interactive visualization, and Markdown/DOCX/PDF export.
 
-## 界面预览
+## Interface preview
 
-### 引导式报告配置
+### Guided report configuration
 
-![SimuReport 引导式报告工作流](docs/screenshots/report-workflow.png)
+![Guided report configuration](docs/screenshots/report-workflow.png)
 
-### 分层知识库管理
+### Layered knowledge-base management
 
-![SimuReport 分层知识库管理](docs/screenshots/knowledge-base.png)
+![Layered knowledge-base management](docs/screenshots/knowledge-base.png)
 
-## 项目亮点
+## Engineering highlights
 
-- **端到端 AI 工作流**：从数据接入、条件澄清和检索增强，一直覆盖到章节审核与报告导出。
-- **可控生成**：以 Draft/Slot 状态模型管理报告章节，让用户可以逐段编辑、确认或重新生成。
-- **混合检索**：组合 ChromaDB 向量检索与 BM25 关键词检索，兼顾语义相关性和专业术语命中。
-- **可观测工具调用**：MCP 层统一管理工具发现、参数调用、执行日志和统计，便于调试与扩展。
-- **工程化边界**：包含身份认证、角色权限、组织隔离、异步任务、输入校验和密钥脱敏。
+- **End-to-end AI workflow:** covers data ingestion, requirement clarification, retrieval, section-level review, and final report export.
+- **Controllable generation:** uses a Draft/Slot state model so users can edit, approve, or regenerate individual report sections.
+- **Hybrid retrieval:** combines ChromaDB vector search with BM25 keyword search to balance semantic relevance and domain terminology.
+- **Observable MCP execution:** centralizes tool discovery, parameterized calls, execution logs, and usage statistics.
+- **Application boundaries:** includes authentication, role-based access, organization isolation, asynchronous tasks, input validation, and secret masking.
 
-## 核心能力
+## Core capabilities
 
-- **多源数据接入**：支持本地目录、ZIP 数据包和标准 Schema JSON，并提供结构校验与元数据提取。
-- **可控报告工作流**：使用 Draft/Slot 模型拆分章节，支持逐槽生成、人工编辑、确认和重新生成。
-- **RAG 知识增强**：组合向量检索与 BM25，为报告生成和智能问答提供可追溯的领域上下文。
-- **MCP 工具编排**：统一暴露工具发现、参数调用、执行日志与统计接口，便于接入外部分析能力。
-- **数据可视化**：通过 ECharts 呈现数据概览、分析结果和报告图表。
-- **权限与组织隔离**：提供用户、管理员和开发者角色，以及组织级知识与报告协作空间。
-- **多格式导出**：支持 Markdown、DOCX 和 PDF 报告导出。
+- **Multi-source ingestion:** accepts local directories, ZIP packages, and standardized Schema JSON with metadata extraction and validation.
+- **RAG-assisted analysis:** supplies traceable domain context for report generation and conversational analysis.
+- **MCP tool orchestration:** exposes tool discovery and execution interfaces for external analytical capabilities.
+- **Interactive visualization:** uses ECharts for dataset summaries, analytical results, and report figures.
+- **Collaborative knowledge:** supports system, personal, and organization-scoped knowledge sources.
+- **Multi-format delivery:** exports reports as Markdown, DOCX, and PDF.
 
-## 系统架构
+## Architecture
 
 ```mermaid
 flowchart LR
-    A[Vue 3 前端] --> B[Flask API]
-    B --> C[数据包解析与 Schema 校验]
-    B --> D[Draft / Slot 报告流水线]
-    D --> E[RAG 检索]
-    D --> F[MCP 工具调用]
-    E --> G[(知识库)]
-    F --> H[外部分析工具]
+    A[Vue 3 frontend] --> B[Flask API]
+    B --> C[Package parsing and schema validation]
+    B --> D[Draft / Slot report pipeline]
+    D --> E[Hybrid RAG retrieval]
+    D --> F[MCP tool execution]
+    E --> G[(Knowledge base)]
+    F --> H[External analysis tools]
     D --> I[Markdown / DOCX / PDF]
 ```
 
-## 技术栈
+## Technology stack
 
-- 前端：Vue 3、Vue Router、Vite、Element Plus、ECharts
-- 后端：Python、Flask、SQLite、PyJWT
-- 智能能力：OpenAI 兼容接口、ChromaDB、BM25、MCP
-- 文档处理：python-docx、ReportLab 及相关解析组件
-- 性能测试：Apache JMeter
+- **Frontend:** Vue 3, Vue Router, Vite, Element Plus, ECharts
+- **Backend:** Python, Flask, SQLite, PyJWT
+- **AI and retrieval:** OpenAI-compatible APIs, ChromaDB, BM25, MCP
+- **Document processing:** python-docx, ReportLab, and related parsers
+- **Performance testing:** Apache JMeter
 
-## 项目结构
+## Repository structure
 
 ```text
 .
-├─ frontend/          # Vue 3 Web 应用
-├─ server/            # Flask API、认证、任务与数据管理
-├─ reportgen/         # 报告生成、检索与导出核心逻辑
-├─ integration_demo/  # 第三方软件接入示例
-├─ tests/jmeter/      # 性能测试计划与运行脚本
-├─ 知识库/             # 可公开的示例知识卡片
-├─ 数据包/             # 可公开的示例数据包
-├─ docs/              # API、MCP 与部署文档
+├─ frontend/          # Vue 3 web application
+├─ server/            # Flask API, authentication, tasks, and data management
+├─ reportgen/         # Report generation, retrieval, and export logic
+├─ integration_demo/  # External application integration example
+├─ tests/jmeter/      # API performance test plan and runner
+├─ 知识库/             # Public sample knowledge cards
+├─ 数据包/             # Public sample engineering dataset
+├─ docs/              # API, MCP, package, and deployment documentation
 └─ requirements.txt
 ```
 
-## 快速开始
+## Quick start
 
-### 1. 安装后端依赖
+### 1. Install backend dependencies
 
 ```bash
 python -m venv .venv
@@ -85,37 +84,37 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. 配置环境变量
+### 2. Configure environment variables
 
-PowerShell：
+PowerShell:
 
 ```powershell
 $env:SIMUREPORT_DEMO_ADMIN_PASSWORD = "choose-a-local-password"
 $env:DEEPSEEK_API_KEY = "your_deepseek_key"
-$env:TAVILY_API_KEY = "your_tavily_key"   # 可选
-$env:JWT_SECRET = "replace_with_a_random_secret"
+$env:TAVILY_API_KEY = "your_tavily_key"   # optional
+$env:JWT_SECRET = "replace_with_a-random-secret"
 ```
 
-Bash：
+Bash:
 
 ```bash
 export SIMUREPORT_DEMO_ADMIN_PASSWORD="choose-a-local-password"
 export DEEPSEEK_API_KEY="your_deepseek_key"
-export TAVILY_API_KEY="your_tavily_key"   # 可选
-export JWT_SECRET="replace_with_a_random_secret"
+export TAVILY_API_KEY="your_tavily_key"   # optional
+export JWT_SECRET="replace-with-a-random-secret"
 ```
 
-`SIMUREPORT_DEMO_ADMIN_PASSWORD` 仅用于本地演示。设置后，系统会创建用户名为 `demo_admin` 的管理员；未设置时不会自动创建任何默认账号。
+`SIMUREPORT_DEMO_ADMIN_PASSWORD` is intended for local demonstrations only. When set, the application creates a `demo_admin` account; when omitted, no default account is created.
 
-### 3. 启动后端
+### 3. Start the backend
 
 ```bash
 python server/app_v2.py
 ```
 
-后端默认运行在 `http://localhost:5000`。
+The API runs at `http://localhost:5000` by default.
 
-### 4. 启动前端
+### 4. Start the frontend
 
 ```bash
 cd frontend
@@ -123,47 +122,55 @@ npm install
 npm run dev
 ```
 
-前端默认运行在 `http://localhost:3001`。
+The web application runs at `http://localhost:3001` by default.
 
-## 典型流程
+## Typical workflow
 
-1. 上传或选择符合规范的数据包。
-2. 系统解析变量、层级与可视化资源，并校验 Schema。
-3. 用户通过澄清问答确定领域、用途和报告模板。
-4. 报告引擎创建 Draft 与 Slot，结合知识库和 MCP 工具逐步生成内容。
-5. 用户审核、编辑并确认各个章节。
-6. 系统导出 Markdown、DOCX 或 PDF 报告。
+1. Upload or select a package that follows the project schema.
+2. Parse variables, hierarchy, and visualization assets, then validate the package.
+3. Clarify the analysis domain, report purpose, and template.
+4. Create a report Draft and fill its Slots using retrieved knowledge and MCP tools.
+5. Review, edit, and approve individual sections.
+6. Export the completed report as Markdown, DOCX, or PDF.
 
-## API 入口
+## API entry points
 
-- 健康检查：`GET /api/health`
-- 数据接入：`POST /api/upload-folder`、`POST /api/upload`、`POST /api/ingest`
-- 一键报告：`POST /api/v1/report/generate`
-- 草稿流程：`/api/draft`、`/api/slots/*`、`/api/export/report`
-- 知识库：`/api/kb/*`
-- MCP：`/mcp/tools/list`、`/mcp/tools/call`、`/api/mcp-chat-stream`
+- Health: `GET /api/health`
+- Data ingestion: `POST /api/upload-folder`, `POST /api/upload`, `POST /api/ingest`
+- One-step report generation: `POST /api/v1/report/generate`
+- Draft workflow: `/api/draft`, `/api/slots/*`, `/api/export/report`
+- Knowledge base: `/api/kb/*`
+- MCP: `/mcp/tools/list`, `/mcp/tools/call`, `/api/mcp-chat-stream`
 
-详细请求示例参见 [`docs/API使用文档.md`](docs/API使用文档.md)，MCP 接入方式参见 [`docs/MCP工具文档.md`](docs/MCP工具文档.md)。
+Detailed examples are available in [API documentation](docs/API使用文档.md), [MCP tool documentation](docs/MCP工具文档.md), and the [integration guide](docs/集成部署指南.md).
 
-## 测试
+## Validation
 
-核心报告模块包含 10 个自动化测试：
+Run the 10 automated tests for the report-generation core:
 
 ```bash
 python -m pytest reportgen/tests -q
 ```
 
-仓库还保留了可复现的 JMeter 接口测试计划。请单独安装 Apache JMeter 后运行：
+The repository also includes a JMeter plan covering health, authentication, schema validation, knowledge-base, organization, MCP, asynchronous-task, and administration endpoints:
 
 ```bash
-jmeter -n -t tests/jmeter/SimuReport_TestPlan.jmx -l tests/jmeter/results/result.csv
+jmeter -n -t tests/jmeter/SimuReport_TestPlan.jmx \
+  -JADMIN_PASSWORD=choose-a-local-password \
+  -l tests/jmeter/results/result.csv
 ```
 
-JMeter 测试计划覆盖健康检查、认证、数据校验、知识库、组织、MCP、异步任务和管理员接口。
+Build the two frontend applications with:
 
-## 配置与安全
+```bash
+cd frontend && npm run build
+cd ../integration_demo/frontend && npm run build
+```
 
-- 示例账号和默认密钥仅用于本地开发，部署前应通过环境变量覆盖。
-- `.env`、SQLite 数据库、上传文件、生成结果和本地知识库内容不会提交到仓库。
-- SQLite 适合单机部署；多实例部署建议迁移到独立数据库服务。
-- PDF 导出依赖本地渲染环境，部署前应单独验证字体与文档转换组件。
+## Configuration and security
+
+- No API key, database, uploaded document, generated report, or private knowledge-base content is committed.
+- A demo administrator is created only when `SIMUREPORT_DEMO_ADMIN_PASSWORD` is explicitly set.
+- SQLite is suitable for local and single-instance use; multi-instance deployments should use an external database service.
+- LLM-assisted and web-search features require the corresponding provider credentials.
+- PDF export depends on the host rendering environment and should be verified with the target fonts and conversion tools.
